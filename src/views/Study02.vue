@@ -1,16 +1,16 @@
 <template>
-  <div>{{ data.name }}-{{ data.age }}</div>
+  <div>{{ name }}-{{ age }}</div>
   <div>
-    count: {{ data.count }} <br />
-    double: {{ data.double }}
+    count: {{ count }} <br />
+    double: {{ double }}
   </div>
   <div>
-    <button @click="data.increase">increase</button>
+    <button @click="increase">increase</button>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive } from "vue";
+import { computed, defineComponent, reactive, toRefs } from "vue";
 interface IData {
   count: number;
   double: number;
@@ -31,7 +31,7 @@ export default defineComponent({
       age: 20,
     });
     return {
-      data,
+      ...toRefs(data),
     };
   },
 });
