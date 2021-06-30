@@ -12,6 +12,7 @@ import { computed, defineComponent, ref } from "vue";
 export default defineComponent({
   name: "App",
   setup() {
+    document.title = "ref";
     const hello = ref("helloworld");
 
     const count = ref(0);

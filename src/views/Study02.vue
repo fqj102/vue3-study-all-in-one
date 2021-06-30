@@ -28,6 +28,7 @@ interface IData {
 export default defineComponent({
   name: "App",
   setup() {
+    document.title = "reative object deep change";
     const data: IData = reactive({
       count: 0,
       increase: () => {

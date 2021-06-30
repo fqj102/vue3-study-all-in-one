@@ -5,6 +5,13 @@
     <router-link to="/study">study</router-link> |
     <router-link to="/study02">study02</router-link> |
     <router-link to="/study03">study03</router-link> |
+    <router-link to="/study04">study04</router-link> |
+    <router-link to="/study05">study05</router-link> |
+    <router-link to="/study06">study06</router-link> |
+    <router-link to="/study07">study07</router-link> |
+    <router-link to="/study08">study08</router-link> |
+    <router-link to="/study09">study09</router-link> |
+    <router-link to="/study10">study10</router-link> |
   </div>
   <router-view />
 </template>
