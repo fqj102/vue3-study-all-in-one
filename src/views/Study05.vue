@@ -9,24 +9,14 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, ref } from "vue";
+import useMoursePosition from "@/hooks/useMousePosition";
 export default defineComponent({
   name: "App",
   setup() {
     //document.title = "buyong mixin , eryong mokuaihua";
     document.title = "鼠标位置, 模块化";
 
-    const x = ref(0);
-    const y = ref(0);
-    const mouseClick = (event: MouseEvent) => {
-      x.value = event.pageX;
-      y.value = event.pageY;
-    };
-    onMounted(() => {
-      document.addEventListener("click", mouseClick);
-    });
-    onUnmounted(() => {
-      document.removeEventListener("click", mouseClick);
-    });
+    const { x, y, mouseClick } = useMoursePosition();
     return {
       x,
       y,
