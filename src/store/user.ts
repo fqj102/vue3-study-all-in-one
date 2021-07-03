@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import user from "./user";
+
 export default createStore({
   state: {
     count: 0,
@@ -17,12 +17,6 @@ export default createStore({
       }, 1000);
     },
   },
-  getters: {
-    double(state) {
-      return state.count * 2;
-    },
-  },
-  modules: {
-    user,
-  },
+ 
+  modules: {},
 });

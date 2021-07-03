@@ -7,7 +7,7 @@
     <router-link to="/study03">study03</router-link> |
     <router-link to="/study04">study04</router-link> |
     <router-link to="/study05">study05</router-link> |
-    <router-link to="/study06">study06</router-link> |
+    <router-link to="/study06">study06 {{ count }}</router-link> |
     <router-link to="/study07">study07</router-link> |
     <router-link to="/study08">study08</router-link> |
     <router-link to="/study09">study09</router-link> |
@@ -15,6 +15,22 @@
   </div>
   <router-view />
 </template>
+<script type="ts">
+import {useStore} from "vuex";
+import {computed, defineComponent} from "vue";
+export default defineComponent({
+
+  setup(props) {
+    console.log(props);
+    const store = useStore();
+    const count = computed(()=> store.state.count);
+    console.log("App.vue");
+    return {
+      count
+    }
+  },
+});
+</script>
 
 <style>
 #app {
