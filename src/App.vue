@@ -1,7 +1,18 @@
 <template>
   <div class="container">
+    <GlobalHeader :user="user" />
+    <div class="row">
+      <div class="col">1</div>
+      <div class="col">2</div>
+      <div class="col">3</div>
+      <div class="col">4</div>
+    </div>
+    <div class="row">
+      <div class="col-8">1</div>
+      <div class="col-4">2</div>
+    </div>
+
     <div id="nav">
-      <a-button>1111</a-button>
       <Loader v-if="isLoading"></Loader>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -23,21 +34,30 @@
 import {useStore} from "vuex";
 import {computed, defineComponent} from "vue";
 import Loader from "@/components/Loader.vue";
+import GlobalHeader from '@/components/GlobalHeader.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 export default defineComponent({
 
   components: {
     Loader,
+    GlobalHeader
   },
   setup(props) {
     console.log(props);
     const store = useStore();
+    const user = {
+      isLogin:true,
+      name:'fqj',
+      id:1,
+
+    }
     const isLoading = computed(()=>store.state.isLoading);
     const count = computed(()=> store.state.count);
     console.log("App.vue");
     return {
       count,
       isLoading,
+      user
     }
   },
 });

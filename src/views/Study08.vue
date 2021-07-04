@@ -1,7 +1,23 @@
 <template>
-  <div v-if="!isLoading">
-    <div><img :src="dog1" alt="" style="width:300px" /></div>
-    <div><img :src="dog" alt="" style="width:300px" /></div>
+  <div v-if="!isLoading" style=" position:absolute;left:40%">
+    <div class="card h-100 shadow-sm" style="width: 18rem;">
+      <img class="card-img-top" :src="dog1" alt="Card image cap" />
+      <div class="card-body">
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+    <div class="card h-100" style="width: 18rem;">
+      <img class="card-img-top" :src="dog" alt="Card image cap" />
+      <div class="card-body">
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
