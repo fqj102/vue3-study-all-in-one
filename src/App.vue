@@ -1,4 +1,5 @@
 <template>
+  <h1 v-if="isLoading">Loading...</h1>
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
@@ -23,10 +24,12 @@ export default defineComponent({
   setup(props) {
     console.log(props);
     const store = useStore();
+    const isLoading = computed(()=>store.state.isLoading);
     const count = computed(()=> store.state.count);
     console.log("App.vue");
     return {
-      count
+      count,
+      isLoading
     }
   },
 });
